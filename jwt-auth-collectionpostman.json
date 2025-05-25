@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "9f45ad65-61d1-402e-b07f-794593e63b72",
+		"name": "exercise6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44007061",
+		"_collection_link": "https://husna-9646937.postman.co/workspace/Husna's-Workspace~fa42324e-3fa2-44ce-8aab-07a6cdb12be9/collection/44007061-9f45ad65-61d1-402e-b07f-794593e63b72?action=share&source=collection_link&creator=44007061"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"normalusers@gmail.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"adminuser@gmail.com\",\r\n  \"password\": \"admin123\",\r\n  \"role\": \"admin\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/auth/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"adminuser@gmail.com\",\r\n  \"password\": \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/admin/users/6832a6e29bb26ba07125eeb4",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODMyYTZlMjliYjI2YmEwNzEyNWVlYjQiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDgxNTA1MjcsImV4cCI6MTc0ODE1NDEyN30.GcprhmCsPchcfJqNldWMns5mTdXdt2V_EHm-y2Z4P5k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/admin/users/6832a6e29bb26ba07125eeb4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"users",
+						"6832a6e29bb26ba07125eeb4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
