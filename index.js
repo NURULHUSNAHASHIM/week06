@@ -93,6 +93,17 @@ app.post('/auth/login', async (req, res) => {
   }
 });
 
+// ✅ NEW: Admin-only GET route to view all users
+app.get('/admin/users', authenticate, authorize(['admin']), async (req, res) => {
+  try {
+    const users = await db.collection('users').find().toArray();
+    res.status(200).json(users);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to retrieve users' });
+  }
+});
+
 // Admin-only protected route to delete user by id
 app.delete('/admin/users/:id', authenticate, authorize(['admin', 'driver']), async (req, res) => {
   try {
